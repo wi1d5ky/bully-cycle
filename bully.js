@@ -1,8 +1,10 @@
 function isFirst(n, a) {
     var s = "";
-    if( n/3 < 0.6) {return "";}
+    if( Math.floor((n)/3) < 1) {
+        return "";
+    }
 
-    for (var i = 0; i < n/3; i++) {
+    for (var i = 0; i < Math.floor(n/3); i++) {
         s += a;
     }
 
@@ -17,19 +19,19 @@ function Bully() {
 
 
     switch ( num%3 ) {
-        case 0: // 0, 3, 6, 9, ...
+        case 1: // 0, 3, 6, 9, ...
             print += " → "+ a + isFirst(num, a);
             break;
-        case 1: // 1, 4, 7, 10, ...
-            print += " → 反"+ a + isFirst(num, a);
+        case 2: // 1, 4, 7, 10, ...
+            print += " → "+"反"+ a + isFirst(num, a);
             break;
-        case 2: // 2, 5, 8, 11, ...
+        case 0: // 2, 5, 8, 11, ...
             print += " → 肉搜" + isFirst(num, a);
             break;
     }
 
     document.getElementById("num").value = num;
     document.getElementById("cycle").innerHTML = print;
-    document.getElementById("person").innerHTML = Math.floor(num/3) + 1;
+    document.getElementById("person").innerHTML = Math.floor((num-1)/3)+1;
 
 }

@@ -35,4 +35,8 @@ body {
     body footer img {
       margin: 1em auto 0; }
 
+@media screen and (max-device-width: 480px) {
+  body > p {
+    padding: 0 1em 1em; } }
+
 /*# sourceMappingURL=style.css.map */
